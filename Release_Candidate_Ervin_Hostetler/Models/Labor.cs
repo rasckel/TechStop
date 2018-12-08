@@ -10,6 +10,6 @@ namespace Release_Candidate_Ervin_Hostetler.Models
         public int LaborId { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
-        public int LaborCost { get; set; }
+        public double LaborCost { get; set; }
     }
 }

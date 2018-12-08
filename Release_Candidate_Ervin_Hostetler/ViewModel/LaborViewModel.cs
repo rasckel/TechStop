@@ -13,6 +13,6 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
         [Required, Display(Name = "Description:")]
         public string Description { get; set; }
         [Required, Display(Name = "Labor Cost:")]
-        public int LaborCost { get; set; }
+        public double LaborCost { get; set; }
     }
 }
