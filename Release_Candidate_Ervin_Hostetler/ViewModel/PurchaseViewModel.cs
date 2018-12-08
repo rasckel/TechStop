@@ -13,10 +13,10 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
         [Required, Display(Name = "Description:")]
         public string Description { get; set; }
         [Required, Display(Name = "Purchase Price:")]
-        public int PurchasePrice { get; set; }
+        public double PurchasePrice { get; set; }
         [Required, Display(Name = "URL:")]
         public string URL { get; set; }
         [Required, Display(Name = "Shipping Cost:")]
-        public int ShippingCost { get; set; }
+        public double ShippingCost { get; set; }
     }
 }
