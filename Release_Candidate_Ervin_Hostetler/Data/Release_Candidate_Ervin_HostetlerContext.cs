@@ -14,12 +14,12 @@ namespace Release_Candidate_Ervin_Hostetler.Models
         {
         }
 
-        public DbSet<Release_Candidate_Ervin_Hostetler.Models.AmazonPurchase> AmazonPurchase { get; set; }
-
         public DbSet<Release_Candidate_Ervin_Hostetler.Models.Customer> Customer { get; set; }
 
         public DbSet<Release_Candidate_Ervin_Hostetler.Models.Labor> Labor { get; set; }
 
         public DbSet<Release_Candidate_Ervin_Hostetler.Models.Purchase> Purchase { get; set; }
+
+        public DbSet<Release_Candidate_Ervin_Hostetler.Models.Quote> Quote { get; set; }
     }
 }

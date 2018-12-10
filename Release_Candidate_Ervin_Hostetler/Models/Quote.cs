@@ -10,7 +10,6 @@ namespace Release_Candidate_Ervin_Hostetler.Models
         public int QuoteID { get; set; }
         public string Name { get; set; }
         public int TicketNumber { get; set; }
-
         public int LaborQuantity { get; set; }
         public string LaborDescription { get; set; }
         public double LaborCost { get; set; }
