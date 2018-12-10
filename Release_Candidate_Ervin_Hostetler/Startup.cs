@@ -37,7 +37,7 @@ namespace Release_Candidate_Ervin_Hostetler
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<Release_Candidate_Ervin_HostetlerContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Release_Candidate_Ervin_HostetlerContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("Release_Candidate_Ervin_Hostetler")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
