@@ -8,6 +8,7 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
 {
     public class QuoteViewModel
     {
+      
         public string Name { get; set; }
         public int TicketNumber { get; set; }
         public List<Labor> Labor { get; set; }
