@@ -56,26 +56,25 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] QuoteViewModel quote)
         {
-            /*var customer = new Customer
+            var customer = new Customer
             {
-                Name = quote.Customer.Name,
-                TicketNumber = quote.Customer.TicketNumber
+                Name = quote.Name,
             };
 
             var purchase = new Purchase
             {
-               PurchaseQuantity = quote.Purchase.PurchaseQuantity,
-               PurchaseDescription = quote.Purchase.PurchaseDescription,
-               PurchasePrice = quote.Purchase.PurchasePrice,
-               URL = quote.Purchase.URL,
-               ShippingCost = quote.Purchase.ShippingCost
+                PurchaseQuantity = quote.PurchaseQuantity,
+                PurchaseDescription = quote.PurchaseDescription,
+                PurchasePrice = quote.PurchasePrice,
+                URL = quote.URL,
+                ShippingCost = quote.ShippingCost
             };
 
             var labor = new Labor
             {
-                LaborQuantity = quote.Labor.LaborQuantity,
-                LaborDescription = quote.Labor.LaborDescription,
-                LaborCost = quote.Labor.LaborCost
+                LaborQuantity = quote.LaborQuantity,
+                LaborDescription = quote.LaborDescription,
+                LaborCost = quote.LaborCost
             };
 
             var quoteData = new Quote
@@ -83,7 +82,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 Customer = customer,
                 Purchase = purchase,
                 Labor = labor
-            };*/
+            };
 
             /*var quote = new Quote 
             {
@@ -108,7 +107,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
             return View(quote);
         }
 
-        // GET: Customer/Edit/5
+         //GET: Customer/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -125,7 +124,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         }
 
         // POST: Customer/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+         //To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -159,7 +158,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
             return View(customer);
         }
 
-        // GET: Customer/Delete/5
+         //GET: Customer/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -177,7 +176,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
             return View(customer);
         }
 
-        // POST: Customer/Delete/5
+         //POST: Customer/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
