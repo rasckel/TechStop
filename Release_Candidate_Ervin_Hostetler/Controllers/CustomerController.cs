@@ -54,9 +54,9 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(/*[Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] */QuoteViewModel quote)
+        public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] QuoteViewModel quote)
         {
-            var customer = new Customer
+            /*var customer = new Customer
             {
                 Name = quote.Customer.Name,
                 TicketNumber = quote.Customer.TicketNumber
@@ -78,16 +78,32 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 LaborCost = quote.Labor.LaborCost
             };
 
+            var quoteData = new Quote
+            {
+                Customer = customer,
+                Purchase = purchase,
+                Labor = labor
+            };*/
 
+            var quote = new Quote 
+            {
+               Name = quote.Name,
+               TicketNumber = quote.TicketNumber,
+               PurchaseQuantity = quote.PurchaseQuantity,
+               PurchaseDescription = quote.PurchaseDescription,
+               PurchasePrice = quote.PurchasePrice,
+               URL = quote.URL,
+               ShippingCost = quote.ShippingCost,
+               LaborQuantity = quote.LaborQuantity,
+               LaborDescription = quote.LaborDescription,
+               LaborCost = quote.LaborCost
+            };
 
             if (ModelState.IsValid)
             {
                 _context.Add(quote);
-                _context.Add(customer);
-                _context.Add(purchase);
-                _context.Add(labor);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Quote));
             }
             return View(customer);
         }
