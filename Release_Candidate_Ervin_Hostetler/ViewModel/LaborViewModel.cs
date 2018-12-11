@@ -8,10 +8,10 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
 {
     public class LaborViewModel
     {
-        [Display(Name = "Quantity:")]
-        public int Quantity { get; set; }
-        [Display(Name = "Description:")]
-        public string Description { get; set; }
+        [Display(Name = "Labor Quantity:")]
+        public int LaborQuantity { get; set; }
+        [Display(Name = "Labor Description:")]
+        public string LaborDescription { get; set; }
         [Display(Name = "Labor Cost:")]
         public double LaborCost { get; set; }
     }
