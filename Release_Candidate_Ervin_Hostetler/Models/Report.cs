@@ -7,7 +7,7 @@ namespace Release_Candidate_Ervin_Hostetler.Models
 {
     public class Report
     {
-        
+        public int ReportId { get; set; }
         public string Name { get; set; }
         
         public string TicketNumber { get; set; }

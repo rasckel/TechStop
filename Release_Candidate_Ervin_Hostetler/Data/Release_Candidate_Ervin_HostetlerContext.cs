@@ -21,5 +21,7 @@ namespace Release_Candidate_Ervin_Hostetler.Models
         public DbSet<Release_Candidate_Ervin_Hostetler.Models.Purchase> Purchase { get; set; }
 
         public DbSet<Release_Candidate_Ervin_Hostetler.Models.Quote> Quote { get; set; }
+
+        public DbSet<Release_Candidate_Ervin_Hostetler.Models.Report> Report { get; set; }
     }
 }
