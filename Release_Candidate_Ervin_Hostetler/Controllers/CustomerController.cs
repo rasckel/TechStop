@@ -56,7 +56,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] QuoteViewModel quote)
         {
-            var customer = new Customer
+            /*var customer = new Customer
             {
                 Name = quote.Customer.Name,
                 TicketNumber = quote.Customer.TicketNumber
@@ -83,13 +83,24 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 Customer = customer,
                 Purchase = purchase,
                 Labor = labor
+            };*/
+
+            var quote = new Quote 
+            {
+               Name = quote.Name,
+               TicketNumber = quote.TicketNumber,
+               PurchaseQuantity = quote.PurchaseQuantity,
+               PurchaseDescription = quote.PurchaseDescription,
+               PurchasePrice = quote.PurchasePrice,
+               URL = quote.URL,
+               ShippingCost = quote.ShippingCost,
+               LaborQuantity = quote.LaborQuantity,
+               LaborDescription = quote.LaborDescription,
+               LaborCost = quote.LaborCost
             };
 
             if (ModelState.IsValid)
             {
-                _context.Add(customer);
-                _context.Add(purchase);
-                _context.Add(labor);
                 _context.Add(quote);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Quote));
