@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Release_Candidate_Ervin_Hostetler.Models;
 
 namespace Release_Candidate_Ervin_Hostetler.Migrations
 {
     [DbContext(typeof(Release_Candidate_Ervin_HostetlerContext))]
-    partial class Release_Candidate_Ervin_HostetlerContextModelSnapshot : ModelSnapshot
+    [Migration("20181211214146_forreall")]
+    partial class forreall
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
