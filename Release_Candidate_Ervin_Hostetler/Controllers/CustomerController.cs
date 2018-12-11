@@ -105,7 +105,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 _context.Add(purchase);
                 _context.Add(quoteData);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Quote));
+                return RedirectToAction(nameof(Index));
             }
             return View(quote);
         }
