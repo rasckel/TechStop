@@ -9,15 +9,15 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
     public class PurchaseViewModel
     {
         public bool AmazonPurcahse { get; set; }
-        [Required, Display(Name = "Quantity:")]
+        [Display(Name = "Quantity:")]
         public int Quantity { get; set; }
-        [Required, Display(Name = "Description:")]
+        [Display(Name = "Description:")]
         public string Description { get; set; }
-        [Required, Display(Name = "Purchase Price:")]
+        [Display(Name = "Purchase Price:")]
         public double PurchasePrice { get; set; }
-        [Required, Display(Name = "URL:")]
+        [Display(Name = "URL:")]
         public string URL { get; set; }
-        [Required, Display(Name = "Shipping Cost:")]
+        [Display(Name = "Shipping Cost:")]
         public double ShippingCost { get; set; }
     }
 }

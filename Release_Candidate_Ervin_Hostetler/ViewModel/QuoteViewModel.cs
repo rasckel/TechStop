@@ -1,6 +1,7 @@
 ﻿using Release_Candidate_Ervin_Hostetler.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,10 +9,11 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
 {
     public class QuoteViewModel
     {
-      
+        [Required, Display(Name = "Name:")]
         public string Name { get; set; }
+        [Required, Display(Name = "Ticket Number:")]
         public int TicketNumber { get; set; }
-
+        [Display(Name = "Labor Quantity:")]
         public int LaborQuantity { get; set; }
         public string LaborDescription { get; set; }
         public double LaborCost { get; set; }
