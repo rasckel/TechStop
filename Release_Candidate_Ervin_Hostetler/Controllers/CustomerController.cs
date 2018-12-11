@@ -62,10 +62,10 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 TicketNumber = quote.Customer.TicketNumber
             };
 
-            var Purchase = new Purchase
+            var purchase = new Purchase
             {
-               PurcahseQuanity = quote.Purcahse.PurcahseQunity,
-               PurcahseDescription = quote.Purchase.PurcahseDescription,
+               PurchaseQuantity = quote.Purchase.PurchaseQuantity,
+               PurchaseDescription = quote.Purchase.PurchaseDescription,
                PurchasePrice = quote.Purchase.PurchasePrice,
                URL = quote.Purchase.URL,
                ShippingCost = quote.Purchase.ShippingCost
