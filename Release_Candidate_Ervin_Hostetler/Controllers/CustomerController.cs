@@ -100,7 +100,10 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Add(quote);
+                _context.Add(customer);
+                _context.Add(labor);
+                _context.Add(purchase);
+                _context.Add(quoteData);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Quote));
             }
