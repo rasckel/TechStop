@@ -53,11 +53,43 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber")] Customer customer)
+        public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] Customer customer)
         {
+            var quote = new Quote
+            {
+                Customer = customer,
+                Labor = labor,
+                Purchase = purchase,      
+            };
+
+            var customer = new Customer
+            {
+                Name = quote.Customer.Name,
+                TicketNumber = quote.Customer.TicketNumber
+            };
+
+            var Purchase = new Purchase
+            {
+               PurcahseQuanity = quote.Purcahse.PurcahseQunity,
+               PurcahseDescription = quote.Purchase.PurcahseDescription,
+               PurchasePrice = quote.Purchase.PurchasePrice,
+               URL = quote.Purchase.URL,
+               ShippingCost = quote.Purchase.ShippingCost
+            };
+
+            var labor = new Labor
+            {
+                LaborQuantity = quote.Labor.LaborQuantity,
+                LaborDescription = quote.Labor.LaborDescription,
+                LaborCost = quote.Labor.LaborCost
+            };
+
             if (ModelState.IsValid)
             {
+                _context.Add(quote);
                 _context.Add(customer);
+                _context.Add(purchase);
+                _context.Add(labor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
