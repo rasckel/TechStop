@@ -85,19 +85,19 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 Labor = labor
             };*/
 
-            var quote = new Quote 
+            /*var quote = new Quote 
             {
-               Name = quote.Name,
-               TicketNumber = quote.TicketNumber,
-               PurchaseQuantity = quote.PurchaseQuantity,
-               PurchaseDescription = quote.PurchaseDescription,
-               PurchasePrice = quote.PurchasePrice,
-               URL = quote.URL,
-               ShippingCost = quote.ShippingCost,
-               LaborQuantity = quote.LaborQuantity,
-               LaborDescription = quote.LaborDescription,
-               LaborCost = quote.LaborCost
-            };
+               Name = Quote.Name,
+               TicketNumber = Quote.TicketNumber,
+               PurchaseQuantity = Quote.PurchaseQuantity,
+               PurchaseDescription = Quote.PurchaseDescription,
+               PurchasePrice = Quote.PurchasePrice,
+               URL = Quote.URL,
+               ShippingCost = Quote.ShippingCost,
+               LaborQuantity = Quote.LaborQuantity,
+               LaborDescription = Quote.LaborDescription,
+               LaborCost = Quote.LaborCost
+            };*/
 
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Quote));
             }
-            return View(customer);
+            return View(quote);
         }
 
         // GET: Customer/Edit/5
