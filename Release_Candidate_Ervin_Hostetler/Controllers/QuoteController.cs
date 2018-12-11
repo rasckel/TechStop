@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Release_Candidate_Ervin_Hostetler.Models;
+//using static Release_Candidate_Ervin_Hostetler.Controllers.QueryOptionsController;
 
 namespace Release_Candidate_Ervin_Hostetler.Controllers
 {
@@ -148,5 +149,20 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         {
             return _context.Quote.Any(e => e.QuoteID == id);
         }
+
+        //public async Task<IActionResult> Report(QueryOptions queryOptions)
+        //{
+        //    if (queryOptions == null || string.IsNullOrWhiteSpace(queryOptions.SortField))
+        //    {
+        //        queryOptions = new QueryOptions
+        //        {
+        //            SortField = "LastName",
+        //            SortOrder = SortOrder.ASC
+        //        };
+        //    }
+        //    ViewBag.QueryOptions = queryOptions;
+        //    return View(await _context..OrderBy(queryOptions.Sort).ToListAsync());
+        //}
+
     }
 }
