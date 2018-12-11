@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Release_Candidate_Ervin_Hostetler.Models;
+using Release_Candidate_Ervin_Hostetler.ViewModel;
 
 namespace Release_Candidate_Ervin_Hostetler.Controllers
 {
@@ -53,15 +54,8 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] Customer customer)
+        public async Task<IActionResult> Create(/*[Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] */QuoteViewModel quote)
         {
-            var quote = new Quote
-            {
-                Customer = customer,
-                Labor = labor,
-                Purchase = purchase,      
-            };
-
             var customer = new Customer
             {
                 Name = quote.Customer.Name,
@@ -83,6 +77,8 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 LaborDescription = quote.Labor.LaborDescription,
                 LaborCost = quote.Labor.LaborCost
             };
+
+
 
             if (ModelState.IsValid)
             {
