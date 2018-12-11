@@ -10,7 +10,7 @@ using Release_Candidate_Ervin_Hostetler.ViewModel;
 
 namespace Release_Candidate_Ervin_Hostetler.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : Controller 
     {
         private readonly Release_Candidate_Ervin_HostetlerContext _context;
 

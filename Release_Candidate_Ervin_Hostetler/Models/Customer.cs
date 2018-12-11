@@ -9,6 +9,6 @@ namespace Release_Candidate_Ervin_Hostetler.Models
     {
         public int CustomerId { get; set; }
         public string Name { get; set; }
-        public string TicketNumber { get; set; }
+        
     }
 }
