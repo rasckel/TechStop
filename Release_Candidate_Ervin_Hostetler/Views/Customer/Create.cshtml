@@ -1,4 +1,4 @@
-﻿@model Release_Candidate_Ervin_Hostetler.Models.Customer
+﻿@model Release_Candidate_Ervin_Hostetler.Models.Report
 
 @{
     ViewData["Title"] = "Create";
@@ -54,6 +54,23 @@
                 <label asp-for="ShippingCost" class="control-label"></label>
                 <input asp-for="ShippingCost" class="form-control" />
                 <span asp-validation-for="ShippingCost" class="text-danger"></span>
+            </div>
+
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LaborQuantity" class="control-label"></label>
+                <input asp-for="LaborQuantity" class="form-control" />
+                <span asp-validation-for="LaborQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LaborDescription" class="control-label"></label>
+                <input asp-for="LaborDescription" class="form-control" />
+                <span asp-validation-for="LaborDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LaborCost" class="control-label"></label>
+                <input asp-for="LaborCost" class="form-control" />
+                <span asp-validation-for="LaborCost" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

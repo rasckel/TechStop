@@ -8,7 +8,7 @@ namespace Release_Candidate_Ervin_Hostetler.ViewModel
 {
     public class PurchaseViewModel
     {
-        public bool AmazonPurcahse { get; set; }
+        public bool AmazonPurchase { get; set; }
         [Display(Name = "Quantity:")]
         public int Quantity { get; set; }
         [Display(Name = "Description:")]
