@@ -54,7 +54,7 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(/*[Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] */QuoteViewModel quote)
+        public async Task<IActionResult> Create([Bind("CustomerId,Name,TicketNumber,PurcahseQuanity,PurcahseDescription,PurchasePrice,URL,ShippingCost,LaborQuantity,LaborDescription,LaborCost")] QuoteViewModel quote)
         {
             var customer = new Customer
             {
@@ -78,16 +78,21 @@ namespace Release_Candidate_Ervin_Hostetler.Controllers
                 LaborCost = quote.Labor.LaborCost
             };
 
-
+            var quoteData = new Quote
+            {
+                Customer = customer,
+                Purchase = purchase,
+                Labor = labor
+            };
 
             if (ModelState.IsValid)
             {
-                _context.Add(quote);
                 _context.Add(customer);
                 _context.Add(purchase);
                 _context.Add(labor);
+                _context.Add(quote);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Quote));
             }
             return View(customer);
         }
